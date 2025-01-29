@@ -67,7 +67,7 @@ async def clear(client, message):
 @channelforward.on_message(filters.command("clrcnl") & filters.private & filters.incoming)
 async def clrcnl(client, message):
     channel_id = message.chat.id
-    messages = await channelforward.get_messages(channel_id, limit=100)
+    messages = await channelforward.get_messages(channel_id)
     for message in messages:
         await channelforward.delete_messages(channel_id, message.id)
     await message.reply("Channel messages deleted successfully")
