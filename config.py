@@ -8,8 +8,8 @@ class Config(object):
     BOT_TOKEN = getenv("BOT_TOKEN", "")
     MONGO_URI = getenv("MONGO_URI")
     MONGO_DB = getenv("MONGO_DB")
-    MESSAGES_COLLECTION = getenv("MESSAGES_COLLECTION")
-    CONFIG_COLLECTION = getenv("CONFIG_COLLECTION")
+    MESSAGES_COLLECTION = getenv("MESSAGES_COLLECTION", "default_messages")
+    CONFIG_COLLECTION = getenv("CONFIG_COLLECTION", "default_config")
     MESSAGE_REPEAT_TIME = int(getenv("MESSAGE_REPEAT_TIME", 3600))  # 1 hour
     MESSAGES_PER_INTERVAL = int(getenv("MESSAGES_PER_INTERVAL", 4))
     CHANNELS = {
